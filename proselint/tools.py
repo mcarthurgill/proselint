@@ -15,6 +15,7 @@ import re
 import hashlib
 import json
 import importlib
+from tempfile import gettempdir
 
 try:
     import dbm
@@ -82,7 +83,7 @@ def _get_cache(cachepath):
 def memoize(f):
     """Cache results of computations on disk."""
     # Determine the location of the cache.
-    cache_dirname = os.path.join(os.path.expanduser("~"), ".proselint")
+    cache_dirname = os.path.join(gettempdir(), ".proselint")
 
     # Create the cache if it does not already exist.
     if not os.path.isdir(cache_dirname):
