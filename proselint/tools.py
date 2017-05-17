@@ -15,6 +15,7 @@ import re
 import hashlib
 import json
 import importlib
+import pickle
 from datetime import datetime
 import tempfile
 
